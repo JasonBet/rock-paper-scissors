@@ -63,27 +63,27 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock" && computerChoice == "scissors"){
         victor = "human";
         humanScore++;
-        console.log(victor);
+        console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
     } else if (humanChoice == "paper" && computerChoice == "rock") {
         victor = "human";
         humanScore++;
-        console.log(victor);
+        console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
         victor = "human";
         humanScore++;
-        console.log(victor);
+        console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
     } else if (humanChoice == "rock" && computerChoice == "paper") {
         victor = "computer";
         computerScore++;
-        console.log(victor);
+        console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
     } else if (humanChoice == "paper" && computerChoice == "scissors") {
         victor = "computer";
         computerScore++;
-        console.log(victor);
+        console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
     } else if (humanChoice == "scissors" && computerChoice == "rock") {
         victor = "computer";
         computerScore++;
-        console.log(victor);
+        console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
     }
 }
 
