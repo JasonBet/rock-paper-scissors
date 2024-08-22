@@ -56,10 +56,35 @@ Objective 4: write logic to play a single round
 */
 
 function playRound(humanChoice, computerChoice) {
-    console.log(humanChoice);
-    console.log(computerChoice);
     humanChoice = humanChoice.toLowerCase();
     console.log(humanChoice);
+    console.log(computerChoice);
+    let victor = "nobody";
+    if (humanChoice == "rock" && computerChoice == "scissors"){
+        victor = "human";
+        humanScore++;
+        console.log(victor);
+    } else if (humanChoice == "paper" && computerChoice == "rock") {
+        victor = "human";
+        humanScore++;
+        console.log(victor);
+    } else if (humanChoice == "scissors" && computerChoice == "paper") {
+        victor = "human";
+        humanScore++;
+        console.log(victor);
+    } else if (humanChoice == "rock" && computerChoice == "paper") {
+        victor = "computer";
+        computerScore++;
+        console.log(victor);
+    } else if (humanChoice == "paper" && computerChoice == "scissors") {
+        victor = "computer";
+        computerScore++;
+        console.log(victor);
+    } else if (humanChoice == "scissors" && computerChoice == "rock") {
+        victor = "computer";
+        computerScore++;
+        console.log(victor);
+    }
 }
 
 const humanChoice = getHumanChoice();
