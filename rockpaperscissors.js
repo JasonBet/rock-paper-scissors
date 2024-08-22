@@ -101,10 +101,20 @@ function playGame() {
             console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
         }
     }
-
+    
+    // loop to play 5 rounds
     for (let index = 0; index < 5; index++) {
         const humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
+    }
+
+    // declare winner
+    if (humanScore > computerScore) {
+        console.log("YOU WIN THE GAME!!!")
+    } else if (humanScore < computerScore) {
+        console.log("YOU LOSE THE GAME :(")
+    } else {
+        console.log("IT'S A TIE!")
     }
 }
