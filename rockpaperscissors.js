@@ -42,8 +42,7 @@ Objective 3: write scope variables for tracking score
     Initialize variables with value of 0
 */
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 /* Pseudocode & notes
 Objective 4: write logic to play a single round
@@ -55,39 +54,54 @@ Objective 4: write logic to play a single round
     Test with console log to ensure this works
 */
 
-function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    console.log(humanChoice);
-    console.log(computerChoice);
-    let victor = "nobody";
-    if (humanChoice == "rock" && computerChoice == "scissors"){
-        victor = "human";
-        humanScore++;
-        console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
-    } else if (humanChoice == "paper" && computerChoice == "rock") {
-        victor = "human";
-        humanScore++;
-        console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
-    } else if (humanChoice == "scissors" && computerChoice == "paper") {
-        victor = "human";
-        humanScore++;
-        console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
-    } else if (humanChoice == "rock" && computerChoice == "paper") {
-        victor = "computer";
-        computerScore++;
-        console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
-    } else if (humanChoice == "paper" && computerChoice == "scissors") {
-        victor = "computer";
-        computerScore++;
-        console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
-    } else if (humanChoice == "scissors" && computerChoice == "rock") {
-        victor = "computer";
-        computerScore++;
-        console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
-    }
-}
+
 
 const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
 
 playRound(humanChoice, computerChoice);
+
+/* Pseudocode & notes
+Objective 5: write function to play 5 round game
+
+    Create function playGame that calls playRound 5 times
+    Move playRound function and score variables into playGame
+    Declare a winner after 5 rounds
+    Test with console log to ensure this works
+*/
+
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+    function playRound(humanChoice, computerChoice) {
+        humanChoice = humanChoice.toLowerCase();
+        console.log(humanChoice);
+        console.log(computerChoice);
+        let victor = "nobody";
+        if (humanChoice == "rock" && computerChoice == "scissors"){
+            victor = "human";
+            humanScore++;
+            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
+        } else if (humanChoice == "paper" && computerChoice == "rock") {
+            victor = "human";
+            humanScore++;
+            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
+        } else if (humanChoice == "scissors" && computerChoice == "paper") {
+            victor = "human";
+            humanScore++;
+            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
+        } else if (humanChoice == "rock" && computerChoice == "paper") {
+            victor = "computer";
+            computerScore++;
+            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
+        } else if (humanChoice == "paper" && computerChoice == "scissors") {
+            victor = "computer";
+            computerScore++;
+            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
+        } else if (humanChoice == "scissors" && computerChoice == "rock") {
+            victor = "computer";
+            computerScore++;
+            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
+        }
+    }
+}
