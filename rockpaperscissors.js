@@ -9,8 +9,7 @@ Objective 1: write function to get computer choice
 
 function getComputerChoice() {
     // Generate a random integer (0,1, or 2)
-    let randomNum = Math.floor(Math.random() * 3);
-    console.log(randomNum); 
+    let randomNum = Math.floor(Math.random() * 3); 
     switch (randomNum) {
         case 0:
             return "rock";
@@ -21,4 +20,17 @@ function getComputerChoice() {
         default:
             return "Failed to make a choice";
     } 
+}
+
+/* Pseudocode & notes
+Objective 2: write function to get human choice
+
+    Create function getHumanChoice
+    Prompt user to provide an input
+    Test with console log to ensure this works
+*/
+
+function getHumanChoice() {
+    let humanChoice = prompt("Chose rock, paper, or scissors");
+    return humanChoice;
 }
