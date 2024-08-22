@@ -34,3 +34,13 @@ function getHumanChoice() {
     let humanChoice = prompt("Chose rock, paper, or scissors");
     return humanChoice;
 }
+
+/* Pseudocode & notes
+Objective 3: write scope variables for tracking score
+
+    Create score variables for human and computer globally
+    Initialize variables with value of 0
+*/
+
+let humanScore = 0;
+let computerScore = 0;
