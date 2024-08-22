@@ -44,3 +44,25 @@ Objective 3: write scope variables for tracking score
 
 let humanScore = 0;
 let computerScore = 0;
+
+/* Pseudocode & notes
+Objective 4: write logic to play a single round
+
+    Create function playRound
+    Define parameters of humanChoice and computerChoice
+    Make humanChoice case-insensitive
+    Console log a string representing round winner
+    Test with console log to ensure this works
+*/
+
+function playRound(humanChoice, computerChoice) {
+    console.log(humanChoice);
+    console.log(computerChoice);
+    humanChoice = humanChoice.toLowerCase();
+    console.log(humanChoice);
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
