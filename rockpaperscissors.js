@@ -152,20 +152,29 @@ function playGame() {
 }
 
 // Event Listener using bubbling
-let body = document.querySelector('#body')
+let body = document.querySelector('.body')
 let humanChoice;
 let computerChoice;
+
+let humanScore = 0;
+let computerScore = 0;
 body.addEventListener('click', (e) => {
     
     if (e.target.classList.contains('rock')){
         console.log("Clicked rock");
         humanChoice = 'rock';
         computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice)
+        playRound(humanChoice, computerChoice);
     } else if (e.target.classList.contains('paper')) {
         console.log("Clicked paper");
+        humanChoice = 'paper';
+        computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
     } else if (e.target.classList.contains('scissors')) {
         console.log("Clicked scissors");
+        humanChoice = 'scissors';
+        computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
     } else {
         console.log("Clicked body");
     }

@@ -58,9 +58,13 @@ body {
     line-height: 1.5;
 }
 
-#score {
+.score {
     font-size: 24px;
     font-weight: 900;
+}
+
+#computerScore {
+    color: red;
 }
 
 #gameBody {
