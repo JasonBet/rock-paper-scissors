@@ -147,6 +147,11 @@ function playRound(humanChoice, computerChoice) {
         results.textContent = "You lose, " + computerChoice + " beats " + humanChoice + "!";
         score1.textContent = "Your score is: " + humanScore;
         score2.textContent = "Computer score is: " + computerScore;
+    } else if (humanChoice === computerChoice) {
+        console.log("Tie, you both picked " + humanChoice);
+        results.textContent = "Tie, you both picked " + humanChoice;
+        score1.textContent = "Your score is: " + humanScore;
+        score2.textContent = "Computer score is: " + computerScore;
     }
 /*
 // loop to play 5 rounds
@@ -160,10 +165,21 @@ for (let index = 0; index < 5; index++) {
     if (humanScore === 5) {
         console.log("YOU WIN THE GAME!!!")
         results.innerHTML += "<br>YOU WIN THE GAME!!!";
+        gameOver = true;
+
     } else if (computerScore === 5) {
         console.log("YOU LOSE THE GAME :(")
         results.innerHTML += "<br>YOU LOSE THE GAME :(";
+        gameOver = true;
     }
+}
+
+function reset() {
+    humanScore = 0;
+    computerScore = 0;
+    score1.textContent += humanScore;
+    score2.textContent += computerScore;
+    gameOver = false;
 }
 
 // Event Listener using bubbling
@@ -171,6 +187,8 @@ const body = document.querySelector('.body')
 const results = document.querySelector('#results');
 const score1 = document.querySelector('#humanScore');
 const score2 = document.querySelector('#computerScore');
+
+let gameOver = false;
 
 let humanChoice;
 let computerChoice;
@@ -180,6 +198,9 @@ let computerScore = 0;
 score1.textContent += humanScore;
 score2.textContent += computerScore;
 body.addEventListener('click', (e) => {
+    if (gameOver){
+        reset();
+    }
     
     if (e.target.classList.contains('rock')){
         console.log("Clicked rock");
