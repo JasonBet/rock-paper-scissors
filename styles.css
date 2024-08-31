@@ -1,3 +1,11 @@
+#gameBody {
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* CSS RESET CODE */
 *,
 *::before,
@@ -11,6 +19,9 @@ figure, blockquote, dl, dd {
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     line-height: 1.5;
   }
