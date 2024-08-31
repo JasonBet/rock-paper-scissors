@@ -101,7 +101,7 @@ function playGame() {
             console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
         }
     }
-    
+    /*
     // loop to play 5 rounds
     for (let index = 0; index < 5; index++) {
         const humanChoice = getHumanChoice();
@@ -117,4 +117,5 @@ function playGame() {
     } else {
         console.log("IT'S A TIE!")
     }
+    */
 }
