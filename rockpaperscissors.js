@@ -101,6 +101,37 @@ function playGame() {
             console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
         }
     }
+}
+    function playRound(humanChoice, computerChoice) {
+        humanChoice = humanChoice.toLowerCase();
+        console.log(humanChoice);
+        console.log(computerChoice);
+        let victor = "nobody";
+        if (humanChoice == "rock" && computerChoice == "scissors"){
+            victor = "human";
+            humanScore++;
+            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
+        } else if (humanChoice == "paper" && computerChoice == "rock") {
+            victor = "human";
+            humanScore++;
+            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
+        } else if (humanChoice == "scissors" && computerChoice == "paper") {
+            victor = "human";
+            humanScore++;
+            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
+        } else if (humanChoice == "rock" && computerChoice == "paper") {
+            victor = "computer";
+            computerScore++;
+            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
+        } else if (humanChoice == "paper" && computerChoice == "scissors") {
+            victor = "computer";
+            computerScore++;
+            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
+        } else if (humanChoice == "scissors" && computerChoice == "rock") {
+            victor = "computer";
+            computerScore++;
+            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
+        }
     /*
     // loop to play 5 rounds
     for (let index = 0; index < 5; index++) {
@@ -119,3 +150,23 @@ function playGame() {
     }
     */
 }
+
+// Event Listener using bubbling
+let body = document.querySelector('#body')
+let humanChoice;
+let computerChoice;
+body.addEventListener('click', (e) => {
+    
+    if (e.target.classList.contains('rock')){
+        console.log("Clicked rock");
+        humanChoice = 'rock';
+        computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice)
+    } else if (e.target.classList.contains('paper')) {
+        console.log("Clicked paper");
+    } else if (e.target.classList.contains('scissors')) {
+        console.log("Clicked scissors");
+    } else {
+        console.log("Clicked body");
+    }
+});
