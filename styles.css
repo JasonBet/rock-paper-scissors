@@ -56,11 +56,13 @@ body {
     align-items: center;
     min-height: 100vh;
     line-height: 1.5;
+    gap: 20px;
 }
 
 .score {
     font-size: 24px;
     font-weight: 900;
+    height: 50px;
 }
 
 #computerScore {
@@ -100,5 +102,13 @@ body {
 .scissors {
     background-color: black;
     color: white;
+}
+
+#results {
+    box-sizing: border-box;
+    height: 50px;
+    padding: 50px 0px;
+    font-size: 24px;
+    color: blue;
 }
 
