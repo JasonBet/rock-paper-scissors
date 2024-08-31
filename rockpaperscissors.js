@@ -67,81 +67,41 @@ Objective 5: write function to play 5 round game
     Test with console log to ensure this works
 */
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    function playRound(humanChoice, computerChoice) {
-        humanChoice = humanChoice.toLowerCase();
-        console.log(humanChoice);
-        console.log(computerChoice);
-        let victor = "nobody";
-        if (humanChoice == "rock" && computerChoice == "scissors"){
-            victor = "human";
-            humanScore++;
-            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
-        } else if (humanChoice == "paper" && computerChoice == "rock") {
-            victor = "human";
-            humanScore++;
-            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
-        } else if (humanChoice == "scissors" && computerChoice == "paper") {
-            victor = "human";
-            humanScore++;
-            console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
-        } else if (humanChoice == "rock" && computerChoice == "paper") {
-            victor = "computer";
-            computerScore++;
-            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
-        } else if (humanChoice == "paper" && computerChoice == "scissors") {
-            victor = "computer";
-            computerScore++;
-            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
-        } else if (humanChoice == "scissors" && computerChoice == "rock") {
-            victor = "computer";
-            computerScore++;
-            console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
-        }
-    }
-}
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     console.log(humanChoice);
     console.log(computerChoice);
-    let victor = "nobody";
     if (humanChoice == "rock" && computerChoice == "scissors"){
-        victor = "human";
         humanScore++;
         console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
         results.textContent = "You win, " + humanChoice + " beats " + computerChoice + "!";
         score1.textContent = "Your score is: " + humanScore;
         score2.textContent = "Computer score is: " + computerScore;
     } else if (humanChoice == "paper" && computerChoice == "rock") {
-        victor = "human";
         humanScore++;
         console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
         results.textContent = "You win, " + humanChoice + " beats " + computerChoice + "!";
         score1.textContent = "Your score is: " + humanScore;
         score2.textContent = "Computer score is: " + computerScore;
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
-        victor = "human";
         humanScore++;
         console.log("You win, " + humanChoice + " beats " + computerChoice + "!");
         results.textContent = "You win, " + humanChoice + " beats " + computerChoice + "!";
         score1.textContent = "Your score is: " + humanScore;
         score2.textContent = "Computer score is: " + computerScore;
     } else if (humanChoice == "rock" && computerChoice == "paper") {
-        victor = "computer";
         computerScore++;
         console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
         results.textContent = "You lose, " + computerChoice + " beats " + humanChoice + "!";
+        score1.textContent = "Your score is: " + humanScore;
+        score2.textContent = "Computer score is: " + computerScore;
     } else if (humanChoice == "paper" && computerChoice == "scissors") {
-        victor = "computer";
         computerScore++;
         console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
         results.textContent = "You lose, " + computerChoice + " beats " + humanChoice + "!";
         score1.textContent = "Your score is: " + humanScore;
         score2.textContent = "Computer score is: " + computerScore;
     } else if (humanChoice == "scissors" && computerChoice == "rock") {
-        victor = "computer";
         computerScore++;
         console.log("You lose, " + computerChoice + " beats " + humanChoice + "!");
         results.textContent = "You lose, " + computerChoice + " beats " + humanChoice + "!";
@@ -153,14 +113,7 @@ function playRound(humanChoice, computerChoice) {
         score1.textContent = "Your score is: " + humanScore;
         score2.textContent = "Computer score is: " + computerScore;
     }
-/*
-// loop to play 5 rounds
-for (let index = 0; index < 5; index++) {
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
-}
-*/
+
 // declare winner
     if (humanScore === 5) {
         console.log("YOU WIN THE GAME!!!")
